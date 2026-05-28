@@ -2,5 +2,5 @@
 
 ## What is CSRF
 
-Cross Site Request Forgery - is an attack of abusing the user session cookie.
-Session-Cookie - is used for application or website to recognise the user activities in the future.
+- Cross Site Request Forgery - is an attack of abusing the user session cookie.
+- Session-Cookie - is used for application or website to recognise the user activities in the future.
