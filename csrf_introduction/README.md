@@ -41,3 +41,18 @@ The application needs to check every request where did it triggered from.
 1. The victim should be authenticated on the webpage.
 2. The webpage should perform any request that modifies data(state changing action).
 3. The application should not perform a scan from where did the request came from.
+
+## Finding the CSRF vulnerabilities
+
+To find the vulnerability it very helpful to ask: "Can this action be triggered without verifying that the actual request came from the user?"
+
+POST and GET requests are both vulnerable to this attack.
+
+These are actions that are most likely to be vulnerable to the CSRF attack:
+
+- Changing the email address
+- Updating the login password
+- Editing the profile info
+- Alter payment info
+- Updating the payment credentials
+- Submit user preference form
