@@ -14,3 +14,12 @@ An attacker can exploit the csrf without knowing the login credentials.
 3. Finally the user browser will send a request to the target application, additionally with session-cookie of the user.
 
 Because request have an actual and legit session-cookie the website will pass it as true.
+
+## Why this attack is dangerous?
+
+Attacker can easily change and take an action on any possible activities on the application.
+
+- Money transaction
+- Account Settings
+- Changing the login credentials
+- Privacy or security preferences
