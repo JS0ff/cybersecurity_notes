@@ -68,3 +68,11 @@ Essentially is needed to change the value of an input value to the chosen mail a
 Check for the encoding of the token. Some of them only seems to have good protection, but actually using the basic encoding techniques.
 
 In the weak_token_exploit.html shows the script with event listener set to the onmouseover, that triggers the request to change the role with the using of user session cookie.
+
+## Important Practices
+
+1. Always check for the state-changing requests: password updates, email updates, changing user preferences.
+2. Analyze the CSRF tokens. If there is no token or the token is not changing, the application most likely to be vulnerable.
+3. Check for HTTP methods. Most of the time important data is uses POST requests. If it uses the GET method it will be easier to exploit, using links or images.
+4. Try to use the request outside the application: Use external HTML page to send the same request. If the requests passes the target is likely to be vulnerable
+5. Analyze the session cookies. Check if the authentication relies solely on the session-cookie. And if the web-application gets the request without security checking where did the request came from, the attack is possible.
