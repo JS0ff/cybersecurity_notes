@@ -57,7 +57,7 @@ These are actions that are most likely to be vulnerable to the CSRF attack:
 - Updating the payment credentials
 - Submit user preference form
 
-## Practicing CSRF vulnerabilities
+## Practicing CSRF vulnerabilities with html forms
 
 In the html_script folder provided two scripts. One is the example of post command that is vulnerable. And the other script is javascript code that will change the address to the attacker@evilmail.thm.
 
