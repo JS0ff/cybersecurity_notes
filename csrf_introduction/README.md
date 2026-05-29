@@ -62,3 +62,9 @@ These are actions that are most likely to be vulnerable to the CSRF attack:
 In the html_script folder provided two scripts. One is the example of post command that is vulnerable. And the other script is javascript code that will change the address to the attacker@evilmail.thm.
 
 Essentially is needed to change the value of an input value to the chosen mail address.
+
+## Practicing CSRF vulnerabilities with weak tokens
+
+Check for the encoding of the token. Some of them only seems to have good protection, but actually using the basic encoding techniques.
+
+In the weak_token_exploit.html shows the script with event listener set to the onmouseover, that triggers the request to change the role with the using of user session cookie.
