@@ -28,3 +28,9 @@ AJAX - Asynchronous Javascript and xml. ---> allows web pages to communicate wit
 ### Storage
 
 In the Storage there is an information about the user: authentication, user preferences, session cookie.
+There are multiple section in the storage: session storage,local storage, cookies, cache storage.
+
+local storage: always stores the data and when the browser is also turned off.
+session storage: stores data only for one session and then deletes it. no persistent saving.
+cookies: small data sent by the web-app and stored in the browser: used for authentication and session cookie.
+cache storage: stores images, scripts, api responses for quick loading. --> this section is used when the website will open again and it will finish uploading quicker.
