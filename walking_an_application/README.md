@@ -18,3 +18,13 @@ In the Inspector section you can see html, css, js and even interact with them. 
 For penetration tester the Debugger section is the main section where javascript is deeply analyzed.
 
 Breakpoints - are used to force some js code to stop in the browser.
+
+### Network
+
+Network section is used to track all the external request made to the website.
+
+AJAX - Asynchronous Javascript and xml. ---> allows web pages to communicate with the server in the background.
+
+### Storage
+
+In the Storage there is an information about the user: authentication, user preferences, session cookie.
