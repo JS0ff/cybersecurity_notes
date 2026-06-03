@@ -113,3 +113,9 @@ Command to find the version of Apache:
 
 Apache's directory list will give the file name, size and last modified date, so it is easier to analyze.
 Developer often leave sensitive data in files, as penetration tester it is important to read every file in the directory.
+
+### The mod_status page
+
+mod_status is a status page, if configured correctly should be accessible only from localhost otherwise it is accessible from any.
+
+This status pages shows all request and what connection does the server have.
