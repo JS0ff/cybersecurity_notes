@@ -138,3 +138,9 @@ Common pattern of action to analyze the Apache server:
 2. Browse directories with listing
 3. Look for /server-status
 4. Use Gobuster to find unlinked files.
+
+## Node.js
+
+Node.js Express is more flexible than python and apache webserver, but that cause more problem.
+
+The biggest problem with this web server is that the specific features may be enabled and attackers that could see the source code and what credentials it is using.
