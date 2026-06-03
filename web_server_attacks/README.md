@@ -19,8 +19,10 @@ It is a good practice to always look for application before enumeration phase.
 Default configuration of web servers are tend to be verbose.
 Most info gives the server header in http response.
 
-<curl -sI http://ip:port>
+`curl -sI http://ip:port`
+
 -s suppresses the progress bar
+
 -I sends a Head request and return only response headers.
 
 output:
