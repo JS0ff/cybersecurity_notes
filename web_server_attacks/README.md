@@ -144,3 +144,19 @@ Common pattern of action to analyze the Apache server:
 Node.js Express is more flexible than python and apache webserver, but that cause more problem.
 
 The biggest problem with this web server is that the specific features may be enabled and attackers that could see the source code and what credentials it is using.
+
+`curl -sI http:TARGET_IP:3000`
+
+output:
+
+root@ip-10-81-64-63:~# curl -sI http://Target_IP:3000
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 56
+ETag: W/"38-K8iCfm09rMr0MV0NsgqdAb94DAk"
+Date: Sat, 11 Apr 2026 07:27:28 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+Check for X-Powered-By to see what is type of web server the application is using.
