@@ -108,3 +108,8 @@ Knowing the exact version of the web server allows you to find the CVE and what 
 
 Command to find the version of Apache:
 `curl -SI http:/10.114.134.108:80 | grep -i server`
+
+### Directory Listing
+
+Apache's directory list will give the file name, size and last modified date, so it is easier to analyze.
+Developer often leave sensitive data in files, as penetration tester it is important to read every file in the directory.
