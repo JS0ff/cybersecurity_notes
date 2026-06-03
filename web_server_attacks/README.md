@@ -63,3 +63,9 @@ The problem is that this server do not have authentication, no access-control, n
 Basically everything that in the working directory can be downloaded.
 
 Other type of servers can be configured that way to disallow access to certain directories but in python http server everything can be accessed.
+
+### Directory Listing
+
+Python automatically generates html page creating every file that it can see.
+
+`curl -s http://ip_address:port/`
