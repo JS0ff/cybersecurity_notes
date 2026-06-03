@@ -85,3 +85,9 @@ This filetype usually hidden in directory navigation linux, but python treats al
 `curl -s http://ip_address:port/backup.zip -o backup.zip`
 `unzip backup.zip -d backup_contents/`
 `cat backup_contents/db_dump.sql`
+
+### Why this matters
+
+The python http server will be triggered without using exploits. The server functionality stays the same as designed.
+
+The problem is using this server in the directory that should not be public.
