@@ -91,3 +91,13 @@ This filetype usually hidden in directory navigation linux, but python treats al
 The python http server will be triggered without using exploits. The server functionality stays the same as designed.
 
 The problem is using this server in the directory that should not be public.
+
+## Apache2
+
+Apache is very popular open source web-server in web infrastructure. By the default Apache server some settings are enabled which can cause information about server leaked.
+
+_Three most popular settings to get information leaked_
+
+1. directory listing
+2. server status module
+3. backup files
