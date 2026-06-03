@@ -26,6 +26,7 @@ Most info gives the server header in http response.
 -I sends a Head request and return only response headers.
 
 output:
+
 Date: Wed, 08 Apr 2026 13:59:00 GMT
 Server: Apache/2.4.58 (Ubuntu)
 Last-Modified: Fri, 03 Apr 2026 18:12:44 GMT
@@ -40,3 +41,19 @@ Every server have different default settings. And each other will give you diffe
 
 Additionally you can user browser tools: network section to see the same header.
 Each servers default page will have different looks.
+
+## Python HTTP Server
+
+Python has built-in http server command:
+
+`python3 http-server 8000`
+
+This command will create an http-server in 8000 port.
+
+What is used for:
+
+1. test static websites
+2. share files
+3. transfer between two machines
+
+The problem is that this server do not have authentication, no access-control, no logging in.
