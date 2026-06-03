@@ -145,6 +145,8 @@ Node.js Express is more flexible than python and apache webserver, but that caus
 
 The biggest problem with this web server is that the specific features may be enabled and attackers that could see the source code and what credentials it is using.
 
+### Framework Fingerprinting
+
 `curl -sI http:TARGET_IP:3000`
 
 output:
@@ -160,3 +162,13 @@ Connection: keep-alive
 Keep-Alive: timeout=5
 
 Check for X-Powered-By to see what is type of web server the application is using.
+
+### Reading the application version
+
+Mostly node.js express web servers use json for status response.
+
+`curl -s http://10.112.189.118:3000`
+
+output:
+
+{"status":"ok","app":"company-portal","version":"1.2.0"}
