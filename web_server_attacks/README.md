@@ -101,3 +101,10 @@ _Three most popular settings to get information leaked_
 1. directory listing
 2. server status module
 3. backup files
+
+### Version Disclosure
+
+Knowing the exact version of the web server allows you to find the CVE and what analyze it more deeply.
+
+Command to find the version of Apache:
+`curl -SI http:/10.114.134.108:80 | grep -i server`
