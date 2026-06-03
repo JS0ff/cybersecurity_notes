@@ -69,3 +69,11 @@ Other type of servers can be configured that way to disallow access to certain d
 Python automatically generates html page creating every file that it can see.
 
 `curl -s http://ip_address:port/`
+
+### Accessing dotfiles
+
+.env file types are common target because developers are storing credentials for specific configuration in the app.
+
+This filetype usually hidden in directory navigation linux, but python treats all file the same way.
+
+`curl -s http://ip_address:port/.env`
