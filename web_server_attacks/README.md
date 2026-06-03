@@ -77,3 +77,11 @@ Python automatically generates html page creating every file that it can see.
 This filetype usually hidden in directory navigation linux, but python treats all file the same way.
 
 `curl -s http://ip_address:port/.env`
+
+### Downloading and Inspecting Archives
+
+.zip .tar.gz could contain source code, database dumps and configuration files.
+
+`curl -s http://ip_address:port/backup.zip -o backup.zip`
+`unzip backup.zip -d backup_contents/`
+`cat backup_contents/db_dump.sql`
