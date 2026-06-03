@@ -57,3 +57,9 @@ What is used for:
 3. transfer between two machines
 
 The problem is that this server do not have authentication, no access-control, no logging in.
+
+### What it servers
+
+Basically everything that in the working directory can be downloaded.
+
+Other type of servers can be configured that way to disallow access to certain directories but in python http server everything can be accessed.
