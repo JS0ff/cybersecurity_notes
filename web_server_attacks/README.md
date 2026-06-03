@@ -129,3 +129,12 @@ Many of website content is hidden. Gobuster tool will help finding them by guess
 Always check for bak extension. Could contain config snippets, credentials, copies of source code.
 
 .htpasswd could contain hashed passwords.
+
+### Putting it together
+
+Common pattern of action to analyze the Apache server:
+
+1. Check the version header
+2. Browse directories with listing
+3. Look for /server-status
+4. Use Gobuster to find unlinked files.
