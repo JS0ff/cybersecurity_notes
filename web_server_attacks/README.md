@@ -107,7 +107,7 @@ _Three most popular settings to get information leaked_
 Knowing the exact version of the web server allows you to find the CVE and what analyze it more deeply.
 
 Command to find the version of Apache:
-`curl -SI http:/10.114.134.108:80 | grep -i server`
+`curl -SI http:/ip_address:80 | grep -i server`
 
 ### Directory Listing
 
