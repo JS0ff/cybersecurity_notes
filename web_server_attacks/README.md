@@ -119,3 +119,13 @@ Developer often leave sensitive data in files, as penetration tester it is impor
 mod_status is a status page, if configured correctly should be accessible only from localhost otherwise it is accessible from any.
 
 This status pages shows all request and what connection does the server have.
+
+### Gobuster tool
+
+Many of website content is hidden. Gobuster tool will help finding them by guessing the path with the wordlist.
+
+`gobuster dir -u http://TARGET_IP -w /usr/share/wordlist/SecList/Discovery/Web-Content/common.txt -x bak,html,txt -t 20`
+
+Always check for bak extension. Could contain config snippets, credentials, copies of source code.
+
+.htpasswd could contain hashed passwords.
