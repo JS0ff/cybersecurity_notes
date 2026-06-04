@@ -217,3 +217,26 @@ output:
 `{"NODE_ENV":"development","DB_PASSWORD":"NodeDBPass2024!","PORT":"3000","DB_HOST":"localhost:5432","APP_NAME":"company-portal"}`
 
 Always document the credentials ---> "DB_PASSWORD"
+
+### Static File Serving
+
+express.static() middleware to serve frontend assets within express, if exists serves everything in a directory.
+
+Client-side js often contains api endpoint URL's, internal hostnames, debug flags.
+
+command:
+
+`curl -s http://TARGET_IP/static/config.js`
+
+output:
+
+`// Client-side configuration
+const API_BASE = 'http://internal-api.company.local:8080';
+const DEBUG = true;
+const VERSION = '1.2.0';
+// flag: THM{node_debug_exposed}
+`
+
+### Putting it all together
+
+Check for errors very cautiously. They hide within themselves important information about web application internals.
