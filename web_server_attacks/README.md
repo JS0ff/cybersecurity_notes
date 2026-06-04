@@ -179,15 +179,15 @@ Node.js have default error handler that do not shows the stack. Often developers
 
 command:
 
-curl -s http://TARGET_IP:3000/api/users | python3 -m json.tool
+`curl -s http://TARGET_IP:3000/api/users | python3 -m json.tool`
 
 output:
 
-{
+`{
 "error": "connect ECONNREFUSED 127.0.0.1:5432",
 "stack": "Error: connect ECONNREFUSED 127.0.0.1:5432\n at /opt/nodeapp/app.js:16:15\n at Layer.handle [as handle_request] (/opt/nodeapp/node_modules/express/lib/router/layer.js:95:5)\n at next (/opt/nodeapp/node_modules/express/lib/router/route.js:149:13)\n at Route.dispatch (/opt/nodeapp/node_modules/express/lib/router/route.js:119:3)\n at Layer.handle [as handle_request] (/opt/nodeapp/node_modules/express/lib/router/layer.js:95:5)\n at /opt/nodeapp/node_modules/express/lib/router/index.js:284:15\n at Function.process_params (/opt/nodeapp/node_modules/express/lib/router/index.js:346:12)\n at next (/opt/nodeapp/node_modules/express/lib/router/index.js:280:10)\n at expressInit (/opt/nodeapp/node_modules/express/lib/middleware/init.js:40:5)\n at Layer.handle [as handle_request] (/opt/nodeapp/node_modules/express/lib/router/layer.js:95:5)",
 "query": "SELECT \* FROM users"
-}
+}`
 
 The stack trace is very important here. The attacker could see directories and what files are exist in the application.
 
@@ -197,7 +197,7 @@ Misconfigured Express application could tell its own routes. This happens becaus
 
 command:
 
-curl -s http://TARGET_IP:3000/api/routes
+`curl -s http://TARGET_IP:3000/api/routes`
 
 output:
 [{"method":"GET","path":"/"},{"method":"GET","path":"/api/users"},{"method":"GET","path":"/api/routes"},{"method":"GET","path":"/api/debug/env"}]
@@ -205,3 +205,15 @@ output:
 This command will save you time of using gobuster.
 
 !Important note: the response could differ because of different Express versions.
+
+### Exposed Environmental Variables
+
+Always check for environmental files. They contain database credentials, API keys and config flags.
+
+`curl -s http://TARGET_IP:3000/api/debug/env`
+
+output:
+
+`{"NODE_ENV":"development","DB_PASSWORD":"NodeDBPass2024!","PORT":"3000","DB_HOST":"localhost:5432","APP_NAME":"company-portal"}`
+
+Always document the credentials ---> "DB_PASSWORD"
