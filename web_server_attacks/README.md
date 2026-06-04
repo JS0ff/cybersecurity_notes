@@ -240,3 +240,21 @@ const VERSION = '1.2.0';
 ### Putting it all together
 
 Check for errors very cautiously. They hide within themselves important information about web application internals.
+
+## Nginx
+
+Nginx is primarily used for reverse proxy, a load balancer, high-performance static server.
+Analyzes the public facing traffic.
+
+load-balancer ---> "traffic cop", ensures that no machine gets overwhelmed.
+reverse-proxy ---> sits in front of web server and intercepts client request before it reaches the origin server.
+
+Problem is misconfiguration.
+
+command:
+
+`curl -sI http://TARGET_IP:8080 | grep -i server`
+
+output:
+
+Server: nginx/1.24.0 (Ubuntu)
