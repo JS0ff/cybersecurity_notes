@@ -258,3 +258,16 @@ command:
 output:
 
 Server: nginx/1.24.0 (Ubuntu)
+
+### Directory Listing with Autoindex
+
+nginx does not turn on directory index by default.
+
+command:
+
+```
+location /files/ {
+    autoindex on;
+    root /var/www/nginx/;
+}
+```
