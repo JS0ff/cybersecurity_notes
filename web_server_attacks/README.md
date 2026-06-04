@@ -167,8 +167,26 @@ Check for X-Powered-By to see what is type of web server the application is usin
 
 Mostly node.js express web servers use json for status response.
 
-`curl -s http://10.112.189.118:3000`
+`curl -s http://TARGET_IP:3000`
 
 output:
 
 {"status":"ok","app":"company-portal","version":"1.2.0"}
+
+### Triggering Verbose Errors.
+
+Node.js have default error handler that do not shows the stack. Often developers use custom made handlers which can cause a stack traces exposed.
+
+command:
+
+curl -s http://TARGET_IP:3000/api/users | python3 -m json.tool
+
+output:
+
+{
+"error": "connect ECONNREFUSED 127.0.0.1:5432",
+"stack": "Error: connect ECONNREFUSED 127.0.0.1:5432\n at /opt/nodeapp/app.js:16:15\n at Layer.handle [as handle_request] (/opt/nodeapp/node_modules/express/lib/router/layer.js:95:5)\n at next (/opt/nodeapp/node_modules/express/lib/router/route.js:149:13)\n at Route.dispatch (/opt/nodeapp/node_modules/express/lib/router/route.js:119:3)\n at Layer.handle [as handle_request] (/opt/nodeapp/node_modules/express/lib/router/layer.js:95:5)\n at /opt/nodeapp/node_modules/express/lib/router/index.js:284:15\n at Function.process_params (/opt/nodeapp/node_modules/express/lib/router/index.js:346:12)\n at next (/opt/nodeapp/node_modules/express/lib/router/index.js:280:10)\n at expressInit (/opt/nodeapp/node_modules/express/lib/middleware/init.js:40:5)\n at Layer.handle [as handle_request] (/opt/nodeapp/node_modules/express/lib/router/layer.js:95:5)",
+"query": "SELECT \* FROM users"
+}
+
+The stack trace is very important here. The attacker could see directories and what files are exist in the application.
