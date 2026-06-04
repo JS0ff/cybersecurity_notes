@@ -190,3 +190,18 @@ output:
 }
 
 The stack trace is very important here. The attacker could see directories and what files are exist in the application.
+
+### Enumerating Routes via Debug Endpoints
+
+Misconfigured Express application could tell its own routes. This happens because of developers more convenient using listing routes and then they just forget to disable them.
+
+command:
+
+curl -s http://TARGET_IP:3000/api/routes
+
+output:
+[{"method":"GET","path":"/"},{"method":"GET","path":"/api/users"},{"method":"GET","path":"/api/routes"},{"method":"GET","path":"/api/debug/env"}]
+
+This command will save you time of using gobuster.
+
+!Important note: the response could differ because of different Express versions.
