@@ -331,3 +331,39 @@ example of output:
 (no security headers found)
 === Port 8080 ===
 (no security headers found)
+
+### Automated scan with Nikto
+
+Nikto scans web server for every possible misconfiguration and exploit, however it is not stealth.
+
+command example:
+
+`nikto -h http://TARGET_IP:80 -nointeractive
+`
+output:
+
+`- Nikto v2.1.5
+
+---
+
+- Target IP: 10.114.148.119
+- Target Hostname: ip-10-114-148-119.eu-central-1.compute.internal
+- Target Port: 80
+- Start Time: 2026-06-05 17:23:50 (GMT0)
+
+---
+
+- Server: Apache/2.4.58 (Ubuntu)
+- Server leaks inodes via ETags, header found with file /, fields: 0x29af 0x64e9243796aa2
+- The anti-clickjacking X-Frame-Options header is not present.
+- No CGI Directories found (use '-C all' to force check all possible dirs)
+- Allowed HTTP Methods: HEAD, GET, POST, OPTIONS
+- OSVDB-561: /server-status: This reveals Apache information. Comment out appropriate line in httpd.conf or restrict access to allowed hosts.
+- OSVDB-3268: /files/: Directory indexing found.
+- OSVDB-3092: /files/: This might be interesting...
+- 6544 items checked: 0 error(s) and 6 item(s) reported on remote host
+- End Time: 2026-06-05 17:24:00 (GMT0) (10 seconds)
+
+---
+
+- 1 host(s) tested`
