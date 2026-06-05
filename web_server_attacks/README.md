@@ -310,3 +310,24 @@ Two most consistent patterns mistakes are:
 
 1. missing security headers
 2. the finding that automated scanners surface quickly
+
+### Security Headers
+
+Security headers are instruction to the servers how to handle page content.
+
+They protect from the client side attacks known as: MIME sniffing, clickjacking and cross-site scripting.
+
+command to audit the webserver:
+
+`for port in 80 8000 3000 8080; do echo "=== Port $port ==="; curl -sI http://TARGET_IP:$port/ | grep -iE "x-frame-options|x-content-type|content-security-policy|strict-transport|referrer-policy" || echo "(no security headers found)"; done`
+
+example of output:
+
+=== Port 80 ===
+(no security headers found)
+=== Port 8000 ===
+(no security headers found)
+=== Port 3000 ===
+(no security headers found)
+=== Port 8080 ===
+(no security headers found)
