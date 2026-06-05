@@ -303,3 +303,10 @@ Action first to take:
 3. check for status endpoint
 
 Check /etc/nginx/sites-available/ for modules that are enabled and modules are exposed.
+
+## Common Misconfiguration Across Server
+
+Two most consistent patterns mistakes are:
+
+1. missing security headers
+2. the finding that automated scanners surface quickly
