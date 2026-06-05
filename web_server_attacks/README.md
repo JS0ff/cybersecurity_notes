@@ -271,3 +271,25 @@ location /files/ {
     root /var/www/nginx/;
 }
 ```
+
+### The nginx_status Endpoint
+
+stab_status module shows connection metrics at a configured url.
+
+`location /nginx_status {
+    stub_status;
+    allow all;  # Should be: allow 127.0.0.1; deny all;
+}`
+
+command for exposing nginx_status:
+
+curl -s http://TARGET_IP:8080/nginx_status
+
+output:
+
+Active connections: 1
+server accepts handled requests
+1 1 1
+Reading: 0 Writing: 1 Waiting: 0
+
+It leaks operational information about server load.
