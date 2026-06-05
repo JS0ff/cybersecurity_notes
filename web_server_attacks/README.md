@@ -293,3 +293,13 @@ server accepts handled requests
 Reading: 0 Writing: 1 Waiting: 0
 
 It leaks operational information about server load.
+
+### Putting it all together.
+
+Action first to take:
+
+1. check for version header
+2. browser directories with autoindex enabled
+3. check for status endpoint
+
+Check /etc/nginx/sites-available/ for modules that are enabled and modules are exposed.
