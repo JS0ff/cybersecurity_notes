@@ -367,3 +367,7 @@ output:
 ---
 
 - 1 host(s) tested`
+
+### Patterns that apply everywhere
+
+Most of the web servers configuration modules are turned on by default for ease of administrating. In a real engagement if you see the pattern it says that the configuration and settings of a server where never touched.
