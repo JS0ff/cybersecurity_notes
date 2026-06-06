@@ -12,3 +12,10 @@ One of the attacks to the IIS was completed by Lazarus Group in 2023. They got i
 IIS web server version shows which CVE to apply.
 WebDAV ---> direct file upload path.
 HTTP methods that server accepts tells what operation is possible.
+
+### IIS version and info
+
+Many IIS web server users do not versions that are note secured.
+IIS 6.0 - 10.0 (7.0, 7.5, 8.0, 8.5)
+
+Look for IIS web server version CVE.
