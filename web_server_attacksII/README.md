@@ -56,3 +56,21 @@ Date: Thu, 25 Apr 2026 09:02:04 GMT`
 Server ---> gives you version
 X-Powered-By ---> gives you .Net application hosting
 X-AspNet-Version ---> gives you the version of framework
+
+### WebDAV Detection with OPTIONS
+
+WebDAV ---> Web Distributed Authoring Versioning --- a set of extensions to the HTTP protocol.
+
+HTTP OPTIONS methods helps you grab allowed methods
+
+example:
+
+command:
+
+`curl -X OPTIONS http://Target_IP -sv 2>&1 | grep -E "Allow:|DAV:"`
+
+output:
+
+`Allow: OPTIONS, TRACE, GET, HEAD, POST, COPY, PROPFIND, DELETE, MOVE, PROPPATCH, MKCOL, LOCK, UNLOCK
+DAV: 1,2,3
+`
