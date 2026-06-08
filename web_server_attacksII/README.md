@@ -32,3 +32,27 @@ There are layers in the IIS web server.
 
 HTTP.sys - is a kernel mode driver that accept http traffic before other IIS process interacts with it.
 Application pools --> run their own process w3wp.exe.
+
+### HTTP Banner Grabber
+
+IIS includes Server header for every response with product and version
+
+command:
+
+`curl -I http://MACHINE_IP`
+
+output:
+
+`HTTP/1.1 200 OK
+Content-Length: 703
+Content-Type: text/html
+Last-Modified: Mon, 13 Apr 2026 14:05:52 GMT
+Accept-Ranges: bytes
+ETag: "d5e75da34ecbdc1:0"
+Server: Microsoft-IIS/10.0
+X-Powered-By: ASP.NET
+Date: Thu, 25 Apr 2026 09:02:04 GMT`
+
+Server ---> gives you version
+X-Powered-By ---> gives you .Net application hosting
+X-AspNet-Version ---> gives you the version of framework
