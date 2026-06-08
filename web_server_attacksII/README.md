@@ -101,3 +101,7 @@ URl paths: normal ---> static assets /// containing ~ or aspx with writable dire
 Status codes: 200, 304, 301, 302, 404 /// 201 or unexpected PUT and DELETE in logs
 
 Server: PRESENT or expected version /// hides or old version of IIS
+
+## IIS Tilde Enumeration
+
+tilde enumeration - is an enumeration technique is the web server have hidden files or hidden admin directory.
