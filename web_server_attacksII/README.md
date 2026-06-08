@@ -91,3 +91,13 @@ PUT aspx: 401
 
 PUT in the answer says: no write access
 Get in the answers says: confirms execution
+
+### Normal vs Suspicious Traffic Patterns
+
+HTTP methods: normal ---> GET POST HEAD /// dangerous ---> OPTIONS returning DAV: PUT MOVE PROPFIND
+
+URl paths: normal ---> static assets /// containing ~ or aspx with writable directories
+
+Status codes: 200, 304, 301, 302, 404 /// 201 or unexpected PUT and DELETE in logs
+
+Server: PRESENT or expected version /// hides or old version of IIS
