@@ -162,3 +162,15 @@ Dir: /backup~1
 Note that \* is a wildcard, matches any character zero or more times.`
 
 The script works left to right. First is starts with a~1._ and b~1._ and then extends for one letter.
+
+### What the Short Name Tells You
+
+BACKUP~1/ --- Backup files, sensitive
+
+ADMINI~1/ --- Admin panel, restricted access
+
+CONFIG~1.ASP --- configurational files, can contain credentials
+
+USERS~1.XLS --- User data export, high value target
+
+After this the attacker will go for actual content of discovered resource
