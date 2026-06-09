@@ -114,3 +114,11 @@ Filename can have no more than 8 characters for name and additional 3 for extens
 
 BackupFiles becomes -> BACKUP~1
 users_backup.xlsx -> USERS\*~1.xls
+
+### How the vulnerability works
+
+IIS will give different responds whether tilde path will be similar or not. detectable.
+
+This technique is different to the bruteforce, as this technique will detect the path from first 6 letters and not from big and vague name.
+
+The recommended mitigation is to disable 8.3 filename creation in the registry.
