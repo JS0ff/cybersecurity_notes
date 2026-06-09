@@ -105,3 +105,12 @@ Server: PRESENT or expected version /// hides or old version of IIS
 ## IIS Tilde Enumeration
 
 tilde enumeration - is an enumeration technique is the web server have hidden files or hidden admin directory.
+
+### The 8.3 Short Filename Problem
+
+Windows has 8.3 filename format which was inherited from the DOS.
+
+Filename can have no more than 8 characters for name and additional 3 for extension.
+
+BackupFiles becomes -> BACKUP~1
+users_backup.xlsx -> USERS\*~1.xls
