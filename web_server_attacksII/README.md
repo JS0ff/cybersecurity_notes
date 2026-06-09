@@ -122,3 +122,43 @@ IIS will give different responds whether tilde path will be similar or not. dete
 This technique is different to the bruteforce, as this technique will detect the path from first 6 letters and not from big and vague name.
 
 The recommended mitigation is to disable 8.3 filename creation in the registry.
+
+### Scanning with iis_shortname_scan.py
+
+check the python folder to see iis_shortname_scan.py script.
+
+command:
+
+`python3 iis_shortname_scan.py TARGET_IP`
+
+output:
+
+`Server is vulnerable, please wait, scanning...
+[+] /a~1._ [scan in progress]
+[+] /b~1._ [scan in progress]
+[+] /as~1._ [scan in progress]
+[+] /ba~1._ [scan in progress]
+[+] /asp~1._ [scan in progress]
+[+] /bac~1._ [scan in progress]
+[+] /aspn~1._ [scan in progress]
+[+] /back~1._ [scan in progress]
+[+] /aspne~1._ [scan in progress]
+[+] /backu~1._ [scan in progress]
+[+] /aspnet~1._ [scan in progress]
+[+] /backup~1._ [scan in progress]
+[+] /aspnet~1 [scan in progress]
+[+] Directory /aspnet~1 [Done]
+[+] /backup~1 [scan in progress]
+[+] Directory /backup~1 [Done]
+
+---
+
+Dir: /aspnet~1
+Dir: /backup~1
+
+---
+
+2 Directories, 0 Files found in total
+Note that \* is a wildcard, matches any character zero or more times.`
+
+The script works left to right. First is starts with a~1._ and b~1._ and then extends for one letter.
