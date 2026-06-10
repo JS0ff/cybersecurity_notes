@@ -203,3 +203,9 @@ Password: P@ssw0rd!123`
 ## WebDAV Exploitation: Uploading an ASPX shell
 
 If WebDAV directory has writing and file execution permission, uploading an ASPX file and requesting it will give you code execution.
+
+### 3 conditions for shell upload
+
+1. WebDAV is enabled
+2. Cred are valid with writing permission
+3. Script execution is set
