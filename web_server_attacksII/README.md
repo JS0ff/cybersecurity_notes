@@ -199,3 +199,7 @@ output:
 Directory: /webdav/
 Username: webdav_user
 Password: P@ssw0rd!123`
+
+## WebDAV Exploitation: Uploading an ASPX shell
+
+If WebDAV directory has writing and file execution permission, uploading an ASPX file and requesting it will give you code execution.
