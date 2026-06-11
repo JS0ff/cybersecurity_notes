@@ -231,3 +231,13 @@ Script for getting shell with aspx: (Remote code execution)
 This script is looks for word 'cmd' in the URL, and checks if the cmd variable is not empty.
 Then it starts new cmd.exe program. Using /c flag script it passes users input string to the command line.
 Finally the script shows output directly in the browser by using "pre" html tags.
+
+### Uploading shell
+
+IIS protects /webdav/ directory with Windows Authentication.
+
+Anonymous users can only read "GET", other operations require valid identity.
+
+--ntlm flag is for curl to know which protocol to use.
+
+Success message is usually 201 Created. Means that file written to server.
