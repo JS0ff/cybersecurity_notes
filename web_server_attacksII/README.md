@@ -322,3 +322,11 @@ ASPX shell on default IIS web server will give you predictable starting point.
 ## IIS Misconfigurations
 
 Misconfigurations are one of the most common IIS attacks.
+
+### Direcotry Listing Enabled
+
+For this configuration IIS renders a file that should be returning 403 Forbidden Error.
+
+Renders sensitive files, credentials, data.
+
+Extension of files that should not be able to access: .bak, .config, .log, .zip, .sql
