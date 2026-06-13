@@ -336,3 +336,9 @@ Extension of files that should not be able to access: .bak, .config, .log, .zip,
 `curl -X OPTIONS http://TARGET_IP/ -sv 2>&1 | grep "Allow:"`
 
 Will reveal all possilbe header actions wihout authentication
+
+### web.config exposure
+
+web.config contain sensitive information(api keys, credentials, databases)
+
+web.config by defualt is not accessible, but if the rule is removed or a MIME mapping is added incorrectly, the config file becomes downloadable
