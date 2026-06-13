@@ -330,3 +330,9 @@ For this configuration IIS renders a file that should be returning 403 Forbidden
 Renders sensitive files, credentials, data.
 
 Extension of files that should not be able to access: .bak, .config, .log, .zip, .sql
+
+### HTTP PUT and Delete without authentication
+
+`curl -X OPTIONS http://TARGET_IP/ -sv 2>&1 | grep "Allow:"`
+
+Will reveal all possilbe header actions wihout authentication
