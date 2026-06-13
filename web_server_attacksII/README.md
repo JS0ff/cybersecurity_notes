@@ -318,3 +318,7 @@ SeIncreaseWorkingSetPrivilege Increase a process working set Disabled`
 SeImpersonatePrivilege ---> one of most useful
 
 ASPX shell on default IIS web server will give you predictable starting point.
+
+## IIS Misconfigurations
+
+Misconfigurations are one of the most common IIS attacks.
