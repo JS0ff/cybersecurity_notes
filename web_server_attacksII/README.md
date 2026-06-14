@@ -342,3 +342,11 @@ Will reveal all possilbe header actions wihout authentication
 web.config contain sensitive information(api keys, credentials, databases)
 
 web.config by defualt is not accessible, but if the rule is removed or a MIME mapping is added incorrectly, the config file becomes downloadable
+
+### Verbose Error Messages
+
+Development mode in IIS will exposure the .NET stack traces.
+
+In production mode the customErrors setting should be turned on.
+
+This setting exposes: file paths, .NET framework version, failed queries, internal IP addresses.
