@@ -368,3 +368,7 @@ This setting could cause XST cross-site tracing attacks.
 Was designed for loopback diagnostic testing.
 
 `curl -X TRACE http://TARGET_MACHINE -sv`
+
+### Application Pool Running as a Privileged Account
+
+The default setting privilage is low-privilage (ApplicationPoolIdentity). But sometimes admins configure this settgin into default Administrator, SYSTEM.
