@@ -350,3 +350,21 @@ Development mode in IIS will exposure the .NET stack traces.
 In production mode the customErrors setting should be turned on.
 
 This setting exposes: file paths, .NET framework version, failed queries, internal IP addresses.
+
+### trace.axd Left Enabled
+
+trace.axd is a built in ASP.NET dignostic handler.
+
+Visiting http://target/trace.axd will return trace logs for recent activities.
+
+Additional can expose session cookies and authentication tokens.
+
+Should be disabled in the web.config.
+
+### Trace method enabled
+
+This setting could cause XST cross-site tracing attacks.
+
+Was designed for loopback diagnostic testing.
+
+`curl -X TRACE http://TARGET_MACHINE -sv`
