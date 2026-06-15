@@ -397,3 +397,11 @@ Nmap scan for available ports:
 http-methods checking OPTIONS request:
 
 `nmap --script http-methods -p 80 TARGET_IP`
+
+### Detecting WebDAV
+
+`http-webdav-scan` is scanning for WebDAV by sending PROPFIND request and reading DAV response headers
+
+`nmap --script http-webdav-scan -p 80 TARGET_IP`
+
+Always check for Public Options cause the nmap version could be different.
