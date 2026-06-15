@@ -372,3 +372,16 @@ Was designed for loopback diagnostic testing.
 ### Application Pool Running as a Privileged Account
 
 The default setting privilage is low-privilage (ApplicationPoolIdentity). But sometimes admins configure this settgin into default Administrator, SYSTEM.
+
+## Automation
+
+Nmap Scripting Engine allows to run multiple commands in one scan
+
+### NSE Scripts for IIS
+
+Nmap has a set of HTTP scripts:
+
+1. http-methods ---> sends OPTIONS request
+2. http-webdav-scan ---> checks for WebDAV support, takes DAV headers
+3. http-iis-webdav-vuln ---> tests for IIS WebDAV auth bypass
+4. http-ntlm-info ---> sends ntlm auth request and retrieves target info
