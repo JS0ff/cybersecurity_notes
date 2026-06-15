@@ -385,3 +385,9 @@ Nmap has a set of HTTP scripts:
 2. http-webdav-scan ---> checks for WebDAV support, takes DAV headers
 3. http-iis-webdav-vuln ---> tests for IIS WebDAV auth bypass
 4. http-ntlm-info ---> sends ntlm auth request and retrieves target info
+
+### Service Version Detection
+
+Nmap scan for available ports:
+
+`nmap -sV -p 80 TARGET_IP`
