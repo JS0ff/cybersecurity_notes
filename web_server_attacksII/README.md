@@ -391,3 +391,9 @@ Nmap has a set of HTTP scripts:
 Nmap scan for available ports:
 
 `nmap -sV -p 80 TARGET_IP`
+
+### Enumerating HTTP Methods
+
+http-methods checking OPTIONS request:
+
+`nmap --script http-methods -p 80 TARGET_IP`
