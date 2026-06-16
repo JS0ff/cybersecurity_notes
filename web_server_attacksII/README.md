@@ -405,3 +405,9 @@ http-methods checking OPTIONS request:
 `nmap --script http-webdav-scan -p 80 TARGET_IP`
 
 Always check for Public Options cause the nmap version could be different.
+
+### Identifying Authentication Requirements
+
+`http-ntlm-info` script will send request to the WebDAV path and take detailed response from NTLM, (authentication type and target machine details)
+
+`nmap --script http-ntlm-info --script-args http-ntlm-info.root=/webdav/ -p 80 TARGET_IP`
