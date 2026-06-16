@@ -19,3 +19,11 @@ ORIGINAL:
 MODIFIED:
 
 `SELECT * FROM users WHERE username='admin'-- AND password='secret';`
+
+### UNION
+
+UNION operator combines the result of two or more SELECT operators in a single result.
+
+One rule: both SELECT operator results should return same number of columns with compatible data types.
+
+Attacker will use UNION operator to include their own SELECT command with a legitamate query.
