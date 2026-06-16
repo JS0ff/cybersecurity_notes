@@ -27,3 +27,5 @@ UNION operator combines the result of two or more SELECT operators in a single r
 One rule: both SELECT operator results should return same number of columns with compatible data types.
 
 Attacker will use UNION operator to include their own SELECT command with a legitamate query.
+
+`SELECT name, age FROM students UNION SELECT username, id FROM admins;`
