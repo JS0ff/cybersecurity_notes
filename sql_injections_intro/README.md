@@ -29,3 +29,19 @@ One rule: both SELECT operator results should return same number of columns with
 Attacker will use UNION operator to include their own SELECT command with a legitamate query.
 
 `SELECT name, age FROM students UNION SELECT username, id FROM admins;`
+
+### LIKE and Wildcards
+
+`LIKE` operator used for pattern matching string.
+
+`%` - matches any sequence of character
+
+`-` - matches one character
+
+Command example:
+
+`SELECT * FROM users WHERE username LIKE 'adm%';`
+
+Returns any string with starting adm.
+
+Attacker could use this operator to enumerate data one char at a time, until fully matching.
