@@ -54,3 +54,16 @@ Attacker could use this operator to enumerate data one char at a time, until ful
 `SELECT * FROM users LIMIT 1;` --> skips 2 rows, returns the 3rd
 
 In injection used for controlling which row is returned or preventing the output from too large output size.
+
+### String Functions
+
+Extracting data from the injection: (Functions)
+
+1. group_concat() - combines output from different responses into one single comma separated string.
+2. CONCAT() - joins values together.
+
+Example:
+
+group_concat() = `SELECT group_concat(username, ':', password SEPARATOR '<br>') FROM users`
+
+CONCAT() = `CONCAT(username, ':', password)`
