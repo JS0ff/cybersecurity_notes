@@ -45,3 +45,12 @@ Command example:
 Returns any string with starting adm.
 
 Attacker could use this operator to enumerate data one char at a time, until fully matching.
+
+### LIMIT
+
+`LIMIT` operation returns the number of rows. Let's the user control the output size
+
+`SELECT * FROM users LIMIT 1;` --> ouptuts only the first row
+`SELECT * FROM users LIMIT 1;` --> skips 2 rows, returns the 3rd
+
+In injection used for controlling which row is returned or preventing the output from too large output size.
