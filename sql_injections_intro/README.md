@@ -67,3 +67,14 @@ Example:
 group_concat() = `SELECT group_concat(username, ':', password SEPARATOR '<br>') FROM users`
 
 CONCAT() = `CONCAT(username, ':', password)`
+
+### The information_schema Database
+
+MySQL, MariaDB, and PostgreSQL servers have built in database: information_schema.
+
+This database contains info about every other database on the server
+
+Two tables most valuable in injection:
+
+1. information_schema.tables: lists every table: table_schema holds database name, table_name holds table name.
+2. information_schema.columns: lists every columns: table_name and column_name columns holds structure of any table.
