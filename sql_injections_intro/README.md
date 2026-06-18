@@ -97,3 +97,20 @@ The problem is when the website allows any user input transfrom into SQL query.
 `SELECT * FROM articles WHERE id = 1 OR 1=1-- AND public = 1;`
 
 `OR 1=1` --> makes the WHERE operator always true.
+
+### Three type of SQL injection
+
+The injections categorized based on how the attacker receives the feedback.
+
+1. IN-band SQL Injections: feedback returned in web-application's response.
+2. Blind SQL Injections: does not display query or error messages. Attacker must test indirect signals(Auth bypass, boolean-based, time-based)
+3. OUT-of-band SQL Injections: when attacker causes target server make external request that exfiltrates data through a separate server.
+
+### Detecting SQL Injection
+
+Inject characters and watch for response.
+`'` : if returns database error, the input inserted into SQL query. Or user double quotes (`"`)
+`;--` : if the application behaves differently, returns different content
+`OR 1=1` : if it changes the result
+
+If not visible check for boolean based or time based solutions.
