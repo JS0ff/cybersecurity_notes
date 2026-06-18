@@ -83,3 +83,17 @@ Two tables most valuable in injection:
 
 User input field is used for SQL query, additionaly input field should not contain sanitisation or parameterisation.
 Web server will assume that the attacker input is SQL code.
+
+### How Web Applications Use SQL
+
+Many pages from website generated from database.
+
+user input data sends to SQL queries and then results returned to the user.
+
+### Where the vulnerability lives
+
+The problem is when the website allows any user input transfrom into SQL query.
+
+`SELECT * FROM articles WHERE id = 1 OR 1=1-- AND public = 1;`
+
+`OR 1=1` --> makes the WHERE operator always true.
