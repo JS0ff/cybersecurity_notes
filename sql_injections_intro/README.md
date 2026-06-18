@@ -78,3 +78,8 @@ Two tables most valuable in injection:
 
 1. information_schema.tables: lists every table: table_schema holds database name, table_name holds table name.
 2. information_schema.columns: lists every columns: table_name and column_name columns holds structure of any table.
+
+## What is SQL Injection?
+
+User input field is used for SQL query, additionaly input field should not contain sanitisation or parameterisation.
+Web server will assume that the attacker input is SQL code.
