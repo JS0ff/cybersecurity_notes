@@ -166,3 +166,11 @@ Auth Bypass is one of the easiest to see.
 Auth query will look like:
 
 `SELECT * FROM users WHERE username='bob' AND password='secret123' LIMIT 1;`
+
+### The Attack
+
+Don't need to know any cred.
+
+`SELECT * FROM users WHERE username='' OR 1=1;--' AND password='anything' LIMIT 1;`
+
+Makes everything true after WHERE clause because of `OR 1=1`, and ignored everything after `;--`
