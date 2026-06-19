@@ -115,6 +115,14 @@ Inject characters and watch for response.
 
 If not visible check for boolean based or time based solutions.
 
-# IN BAND SQL injections
+## IN BAND SQL injections
 
 In Band --> same communicational channel.
+
+### Error Based SQL Injection
+
+Exploits error messages that user receives.
+
+If database is not configured it could leak information about query structure, table names, data.
+
+Error Based Injections => reveal structual information.
