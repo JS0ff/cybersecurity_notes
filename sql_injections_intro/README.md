@@ -174,3 +174,9 @@ Don't need to know any cred.
 `SELECT * FROM users WHERE username='' OR 1=1;--' AND password='anything' LIMIT 1;`
 
 Makes everything true after WHERE clause because of `OR 1=1`, and ignored everything after `;--`
+
+Additionally if the username is known:
+
+`SELECT * FROM users WHERE username='admin'--' AND password='anything' LIMIT 1;`
+
+selects the target username as 'admin'
