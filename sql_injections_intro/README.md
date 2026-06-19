@@ -114,3 +114,7 @@ Inject characters and watch for response.
 `OR 1=1` : if it changes the result
 
 If not visible check for boolean based or time based solutions.
+
+# IN BAND SQL injections
+
+In Band --> same communicational channel.
