@@ -154,3 +154,15 @@ information_schema.tables => to list all tables in target database.
 information_schema.columns => to list all columns in target database.
 
 group_concat(username,':',password SEPARATOR '<br>') FROM target_table => to extract data
+
+## Blind SQL Injection: Auth Bypass
+
+No error or any response from database => use blind sql injection
+
+See the action or hints from the application behavior.
+
+Auth Bypass is one of the easiest to see.
+
+Auth query will look like:
+
+`SELECT * FROM users WHERE username='bob' AND password='secret123' LIMIT 1;`
