@@ -194,3 +194,29 @@ selects the target username as 'admin'
 No visible output.
 
 This method will give you data one char at a time.
+
+### Boolean Based Blind Injection
+
+The application sends binary signal.
+
+Saves the info in different page (json file), true-false values.
+
+Using UNION SELECT with a condition the attacker could ask for specific yes or no question and obtain the data.
+
+Check if the injections is passed:
+
+`admin123' UNION SELECT 1,2,3 WHERE database() LIKE '%';--`
+
+`'%'` => wildcard that matches anything.
+
+Check the database name character by character:
+
+`admin123' UNION SELECT 1,2,3 WHERE database() LIKE 'a%';--`
+
+If false try b,c ..., after receiving true keep enumerating other characters.
+
+Get column and table names:
+
+admin123' UNION SELECT 1,2,3 FROM information_schema.tables WHERE table_schema = 'db_name' AND table_name LIKE 'a%';--
+
+Loop through characters and after finishing with information_schema.tables, next step is information_schema.columns.
