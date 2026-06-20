@@ -188,3 +188,9 @@ selects the target username as 'admin'
 `' OR 1=1;#` => MySQL alternative
 
 `" OR 1=1--` => for queries that use double quotes around input field
+
+## Blind SQL Injection: Boolean and Time based
+
+No visible output.
+
+This method will give you data one char at a time.
