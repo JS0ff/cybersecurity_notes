@@ -242,3 +242,11 @@ If response time is 5 seconds the column count is 2.
 `admin123' UNION SELECT SLEEP(5),2 FROM users WHERE username='admin' AND password LIKE 'password123%';--`
 
 delay => true, no delay => false.
+
+## Out-of-Band (OOB) SQL Injection
+
+Forcing the database server to reaching out to the contolled server through different channel.
+
+Use if everything else if failed and firewall is not blocking outband connections.
+
+Less used compared to the in-band or blind.
