@@ -250,3 +250,8 @@ Forcing the database server to reaching out to the contolled server through diff
 Use if everything else if failed and firewall is not blocking outband connections.
 
 Less used compared to the in-band or blind.
+
+## How it works.
+
+Attack Channel => web request with injection payload
+Data Channel => outband request that the database makes to your server, with the exfiltrated data.
