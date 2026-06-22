@@ -280,9 +280,31 @@ Uses LOAD_FILE() to trigger DNS lookup.
 
 Burp Collaborator, Interactsh, python dnslib custom server, bare-bones HTTP Server.
 
-#### Constraints
+### Constraints
 
 1. Most databases restring outband network access.
 2. Different databases, different payloads.
 3. Characters limitation of 63 for dns exfiltration.
 4. Slower than pulling data directly.
+
+## Remediation and Prevention
+
+Explaining the exploit is important.
+
+### Prepared Statements
+
+### PHP:
+
+Vulnerable code:
+`$query = "SELECT * FROM users WHERE username='" . $_POST['username'] . "'";
+$result = mysqli_query($conn, $query);`
+
+Attacker could escape the qoutes and put vulnerable code.
+
+Fixed code:
+
+`$stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
+$stmt->execute([$_POST['username']]);
+$result = $stmt->fetchAll();`
+
+Not touches the query structure, whole placehold(?) will be treated as a whole string.
