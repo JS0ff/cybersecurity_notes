@@ -323,3 +323,15 @@ Fixed code:
 %s => placeholder
 
 User cannot change the query structure.
+
+### Input Validation
+
+What application accepts until anythign reaches database.
+
+Best approach: allowlisting.
+
+`if (!ctype_digit($_GET['id'])) {
+    die("Invalid input");
+}`
+
+Never realy solely on allowlisting because an attacker will eventually find something to go through filter.
