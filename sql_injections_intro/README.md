@@ -308,3 +308,18 @@ $stmt->execute([$_POST['username']]);
 $result = $stmt->fetchAll();`
 
 Not touches the query structure, whole placehold(?) will be treated as a whole string.
+
+### Python:
+
+Vulnerable code:
+
+`query = f"SELECT * FROM users WHERE username='{username}'"
+cursor.execute(query)`
+
+Fixed code:
+
+`cursor.execute("SELECT * FROM users WHERE username = %s", (username,))`
+
+%s => placeholder
+
+User cannot change the query structure.
