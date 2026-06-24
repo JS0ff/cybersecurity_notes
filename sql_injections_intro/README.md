@@ -335,3 +335,9 @@ Best approach: allowlisting.
 }`
 
 Never realy solely on allowlisting because an attacker will eventually find something to go through filter.
+
+### Escaping User Input
+
+Putting backlash before special characters so database thinks it is literals.
+
+Databsase specificity and fragility makes this method more high level defense.
