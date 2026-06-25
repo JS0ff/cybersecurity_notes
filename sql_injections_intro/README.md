@@ -347,3 +347,9 @@ Databsase specificity and fragility makes this method more high level defense.
 Limit the radius of attack.
 
 Accounts of web app should have the minimum privilages.
+
+### Web Application Firewalls (WAFs)
+
+Scans incoming requests and blocks known pattern attacks: ' OR 1=1, UNION SELECT, information_schema
+
+Can be bypassed, treat as extra layer of security not the whole defense system.
