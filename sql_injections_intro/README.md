@@ -341,3 +341,9 @@ Never realy solely on allowlisting because an attacker will eventually find some
 Putting backlash before special characters so database thinks it is literals.
 
 Databsase specificity and fragility makes this method more high level defense.
+
+### Principle of Least Privilege
+
+Limit the radius of attack.
+
+Accounts of web app should have the minimum privilages.
