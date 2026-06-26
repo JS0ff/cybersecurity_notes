@@ -7,3 +7,11 @@ being used to steal sessions, deliver malware and escalate attacks withing the n
 ## Important Terminalogies
 
 Document Object Model (DOM) - browser's representation of the webpage, can be read and changed with JavaScript
+
+URL Parameters - bits after `?` characters in a URL address that pass data to the site
+
+JavaScript - is primary language in browser, xss payloads often are small JS code
+
+Cookies - are used for storing data in the browser. `HttpOnly` flag is used to disallow js from reading cookies.
+
+Escaping - transforming user input to the plain text. Used for bypassing input validation.
