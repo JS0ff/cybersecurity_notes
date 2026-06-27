@@ -15,3 +15,9 @@ JavaScript - is primary language in browser, xss payloads often are small JS cod
 Cookies - are used for storing data in the browser. `HttpOnly` flag is used to disallow js from reading cookies.
 
 Escaping - transforming user input to the plain text. Used for bypassing input validation.
+
+## XSS Payloads
+
+XSS Payload is a JavaScript code that attacker injects to the web application that runs in other user's browser.
+
+The browser may interpret the injection as the part of the website and run it without filtering.
