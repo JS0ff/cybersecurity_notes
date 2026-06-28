@@ -21,3 +21,5 @@ Escaping - transforming user input to the plain text. Used for bypassing input v
 XSS Payload is a JavaScript code that attacker injects to the web application that runs in other user's browser.
 
 The browser may interpret the injection as the part of the website and run it without filtering.
+
+What an attacker wants to do and modification of the payloads. INTENTION AND MODIFICATION two parts of xss paylaod.
