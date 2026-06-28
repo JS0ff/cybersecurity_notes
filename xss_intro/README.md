@@ -31,3 +31,7 @@ Firstly attacker should check if the webapp is vulnerable:
 `<script>alert('XSS')</script>`
 
 Simple xss payload. Pop up message with 'XSS' string.
+
+### Where Payloads Are Injected
+
+Typically injected into areas of user input and display's it.
