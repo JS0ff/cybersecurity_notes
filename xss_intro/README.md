@@ -23,3 +23,11 @@ XSS Payload is a JavaScript code that attacker injects to the web application th
 The browser may interpret the injection as the part of the website and run it without filtering.
 
 What an attacker wants to do and modification of the payloads. INTENTION AND MODIFICATION two parts of xss paylaod.
+
+### Testing for XSS
+
+Firstly attacker should check if the webapp is vulnerable:
+
+`<script>alert('XSS')</script>`
+
+Simple xss payload. Pop up message with 'XSS' string.
