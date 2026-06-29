@@ -61,3 +61,13 @@ Capturing sensitive data
 Payloads that capturing and abusing some function withing the web app.
 
 For example if there is a function for changing the email address the attacker could change the target's address to his own.
+
+### Relfected XSS - Non Persistant
+
+Reflected XSS is type of an XSS injection.
+
+This attack is used in webapps that do not use sanitazation from queries.
+
+The attacker creates malicious script and convinces the user to click it.
+
+This attack could steal session token, modify data or make actions on behalf of the user.
