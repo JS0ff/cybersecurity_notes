@@ -71,3 +71,13 @@ This attack is used in webapps that do not use sanitazation from queries.
 The attacker creates malicious script and convinces the user to click it.
 
 This attack could steal session token, modify data or make actions on behalf of the user.
+
+### Stored XSS - Persistant
+
+This attack is saved in the database and attack is produced to whole users browser.
+
+Stored XSS usually more dangerous than reflected because it affects whole bunch of users or amdins over time.
+
+This attack is injected in comment sections, profile bio, message, admin-only panel view.
+
+Could steal sessions token and take actions behalf of the victim's account.
