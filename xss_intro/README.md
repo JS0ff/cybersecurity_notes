@@ -81,3 +81,11 @@ Stored XSS usually more dangerous than reflected because it affects whole bunch 
 This attack is injected in comment sections, profile bio, message, admin-only panel view.
 
 Could steal sessions token and take actions behalf of the victim's account.
+
+### DOM Based XSS
+
+Happens when client-side js reads code from untrusted source. Happens only in user's browser, never reaching the server.
+
+Using the `innerHTML' the browser could automatically paste into the browser the untrusted code.
+
+Input will not reach the server side, so it will not prevent from runnint the malicious script.
