@@ -89,3 +89,12 @@ Happens when client-side js reads code from untrusted source. Happens only in us
 Using the `innerHTML' the browser could automatically paste into the browser the untrusted code.
 
 Input will not reach the server side, so it will not prevent from runnint the malicious script.
+
+### Blind XSS
+
+Blind XSS is similar to the stored xss injection but in this attack you cannot see or test the payload.
+
+Contact Form -> input payload -> transforms into supporting tickets -> staff views in private portal.
+
+By using callbacks to the server an attacker could see the url address of the private portal url,
+the staff's member cookies and web pages content being viewed.
