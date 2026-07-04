@@ -98,3 +98,9 @@ Contact Form -> input payload -> transforms into supporting tickets -> staff vie
 
 By using callbacks to the server an attacker could see the url address of the private portal url,
 the staff's member cookies and web pages content being viewed.
+
+### How to Test for Blind XSS
+
+Test if your payload have a callback --> http request.
+
+Usefull tool XSS Hunter Express
