@@ -104,3 +104,11 @@ the staff's member cookies and web pages content being viewed.
 Test if your payload have a callback --> http request.
 
 Usefull tool XSS Hunter Express
+
+### Perfectoing XSS Payload
+
+What is the payload in XSS?
+
+It is a JavaScript code that we can execute in another user's browser or as a demonstration in a website (Proof-Of-Concept).
+
+Payload will differ for specificity of a website.
