@@ -10,3 +10,9 @@ allowed.
 Session management is the process of managing and ensuring the security of the sessions.
 
 Because http protocol is stateless, session is used to track the user action throughout their use of web application.
+
+### Session Management Lifecycle
+
+There is 4 stages in the secure session management lifecycle.
+
+Session Creation -> Session Tracking -> Session Expiry -> Session Termination
