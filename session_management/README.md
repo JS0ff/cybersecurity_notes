@@ -30,3 +30,9 @@ With each new request after logging in, the user's session value is also send wi
 With each request made the web application can understand who the session belongs to and what permissions they have.
 
 Attacks made for stealing or impersinating the session value is made because of problems in this stage.
+
+#### 3. Session Expiry
+
+When the user stops using the web application, the http protocol is stateless, so there is no way to know that the user is not using the application.
+
+Session Value have it's own lifetime. Often time you can see it as a redirection to the login menu.
