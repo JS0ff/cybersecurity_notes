@@ -36,3 +36,7 @@ Attacks made for stealing or impersinating the session value is made because of 
 When the user stops using the web application, the http protocol is stateless, so there is no way to know that the user is not using the application.
 
 Session Value have it's own lifetime. Often time you can see it as a redirection to the login menu.
+
+### 4. Session Termination
+
+When the user forces the logout process it should terminate the session automatically, even the session expiry shouldn't interupt the process. Otherwise the persistent control over the account is can be used.
