@@ -37,6 +37,26 @@ When the user stops using the web application, the http protocol is stateless, s
 
 Session Value have it's own lifetime. Often time you can see it as a redirection to the login menu.
 
-### 4. Session Termination
+#### 4. Session Termination
 
 When the user forces the logout process it should terminate the session automatically, even the session expiry shouldn't interupt the process. Otherwise the persistent control over the account is can be used.
+
+### Authentication vs Authorisation
+
+IAAA Model:
+
+#### IDENTIFICATION:
+
+Who is the user? Web apps know who the person is by email or specific username.
+
+#### Authentication
+
+Proof of the user, they say who they are. Password or sended message with key.
+
+#### Authorisation
+
+Ensuring the user is using only the provided privilages. Session Traficking is crucial in this stage.
+
+#### Accountability
+
+Process of creating list or record with all user actions. Should log all performed actions using specific session. Plays crucial role in incident response, to find the cause of the problem.
