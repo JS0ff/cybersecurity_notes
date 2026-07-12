@@ -60,3 +60,7 @@ Ensuring the user is using only the provided privilages. Session Traficking is c
 #### Accountability
 
 Process of creating list or record with all user actions. Should log all performed actions using specific session. Plays crucial role in incident response, to find the cause of the problem.
+
+### Cookies vs Tokens
+
+Cookies and Tokens are type of session being used. Each of them have their benefits and weaknesses.
