@@ -64,3 +64,7 @@ Process of creating list or record with all user actions. Should log all perform
 ### Cookies vs Tokens
 
 Cookies and Tokens are type of session being used. Each of them have their benefits and weaknesses.
+
+#### Cookie based session management
+
+When web app wants to start tracking in creates Set-Cookie Header.
