@@ -72,3 +72,7 @@ When web app wants to start tracking in creates Set-Cookie Header in cookie base
 Additional categories can be created in this header: Secure, HTTPOnly, Expire, SameSite.
 
 No additional js code needed from client side, the broswer will decide automatically when to send cookie with a request.
+
+#### Token based session management
+
+Relies more on client side code. Stored in browser LocalStorage.
