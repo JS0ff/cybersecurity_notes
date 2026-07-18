@@ -76,3 +76,9 @@ No additional js code needed from client side, the broswer will decide automatic
 #### Token based session management
 
 Relies more on client side code. Stored in browser LocalStorage.
+
+new request is made => javascript code loading token from storage => attaching it's as a header.
+
+JWT tokent = JSON WEB TOKENS, passed through Authorization: Bearer header.
+
+There are standards for using this management system but nothing is stoping for not using them.
