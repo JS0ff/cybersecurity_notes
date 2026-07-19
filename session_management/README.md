@@ -82,3 +82,9 @@ new request is made => javascript code loading token from storage => attaching i
 JWT tokent = JSON WEB TOKENS, passed through Authorization: Bearer header.
 
 There are standards for using this management system but nothing is stoping for not using them.
+
+#### Benefits and drawbacks of each method
+
+Cookie based session management: each request automatically sends cookies without human interaction, Cookies attributes enhances the protection of themselves by browser.
+
+Cookie session mangement are more vulnerable to the client side attacks, tricking the browser to sent requests on behalf of the user. And they are locked only in one domain, which makes them difficult to use in decentralized web apps.
