@@ -92,3 +92,7 @@ Cookie session mangement are more vulnerable to the client side attacks, trickin
 Token Based Session Management: request from the client side js. Addionally tokent don't have auto security attributes, so they need to keep safe from information leakage.
 
 Auto security attributes have positive side as it blocks in a core level CSRF attacks. Furthermore they often used in decentralized web apps because javascript have all information withing itself even for verification.
+
+### Security the Session Lifecycle
+
+Analyzing of the problems in each step or phase.
