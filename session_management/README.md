@@ -103,12 +103,12 @@ This is the stage of the most of vulnerabilites for the whole lifecycle.
 
 Couple of Session Creation Vulnerabilities.
 
-#### WEAK Session Values.
+#### WEAK Session Values
 
 - weak session value - easy predictable token used by web server.
 
 More and more the vulnerabilites are from weak session value, this is one is easy to detect but with the rise of popularity of an AI this vulnerabilies are becoming more common.
 
-It is important to not use the easy or custom session creation encodings, because in the end the tokens could become guessable and predictable. For example using the base64 encoding for session creation is a bad example. It can be reverse engineered with no flaws.
+It is important to not use the easy or custom session creation encodings, because in the end the tokens could become guessable and predictable. For example using the **base64** encoding for session creation is a bad example. It can be reverse engineered with no flaws.
 
 The cause of this vulnerability happening is taking over accounts of real users.
