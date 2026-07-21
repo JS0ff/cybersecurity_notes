@@ -85,6 +85,10 @@ There are standards for using this management system but nothing is stoping for 
 
 #### Benefits and drawbacks of each method
 
-Cookie based session management: each request automatically sends cookies without human interaction, Cookies attributes enhances the protection of themselves by browser.
+Cookie Based Session Management: each request automatically sends cookies without human interaction, Cookies attributes enhances the protection of themselves by browser.
 
 Cookie session mangement are more vulnerable to the client side attacks, tricking the browser to sent requests on behalf of the user. And they are locked only in one domain, which makes them difficult to use in decentralized web apps.
+
+Token Based Session Management: request from the client side js. Addionally tokent don't have auto security attributes, so they need to keep safe from information leakage.
+
+Auto security attributes have positive side as it blocks in a core level CSRF attacks. Furthermore they often used in decentralized web apps because javascript have all information withing itself even for verification.
